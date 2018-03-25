@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+enum Constants {
+    
+    enum errorCode: Int {
+        case nonRetryCode = 0
+        case retryCode = 1
+    }
+    
+    enum TableViewCell {
+        static let beer = "BeerTableViewCell"
+    }
+    
+}

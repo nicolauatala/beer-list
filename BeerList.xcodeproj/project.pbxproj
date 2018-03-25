@@ -7,26 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		892F1AA92065A0E500F1E199 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1AA82065A0E500F1E199 /* ViewController.swift */; };
 		892F1AAC2065A0E500F1E199 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892F1AAA2065A0E500F1E199 /* Main.storyboard */; };
 		892F1AAE2065A0E500F1E199 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 892F1AAD2065A0E500F1E199 /* Assets.xcassets */; };
 		892F1AC42065A5B700F1E199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1AC22065A5B700F1E199 /* AppDelegate.swift */; };
 		892F1AC52065A5B700F1E199 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 892F1AC32065A5B700F1E199 /* Info.plist */; };
 		892F1AC82065A5C400F1E199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 892F1AC62065A5C400F1E199 /* LaunchScreen.storyboard */; };
 		892F1ACA2065A9EB00F1E199 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1AC92065A9EA00F1E199 /* Beer.swift */; };
+		892F1ACC2065B0CE00F1E199 /* BeerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1ACB2065B0CE00F1E199 /* BeerListViewController.swift */; };
+		892F1AD02065B38F00F1E199 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1ACF2065B38F00F1E199 /* APIManager.swift */; };
+		892F1AD22065B3EB00F1E199 /* APIBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1AD12065B3EB00F1E199 /* APIBeer.swift */; };
+		892F1AD52065B4BE00F1E199 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1AD42065B4BE00F1E199 /* Constants.swift */; };
 		A5EF63BB0F15B1CC0222B928 /* Pods_BeerList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F810DB4A4ADC483D13281AFE /* Pods_BeerList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0F0B552D3B7EF5BF6A947D3E /* Pods-BeerList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BeerList/Pods-BeerList.debug.xcconfig"; sourceTree = "<group>"; };
 		892F1AA32065A0E500F1E199 /* BeerList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerList.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		892F1AA82065A0E500F1E199 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		892F1AAB2065A0E500F1E199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		892F1AAD2065A0E500F1E199 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		892F1AC22065A5B700F1E199 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		892F1AC32065A5B700F1E199 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		892F1AC72065A5C400F1E199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		892F1AC92065A9EA00F1E199 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
+		892F1ACB2065B0CE00F1E199 /* BeerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerListViewController.swift; sourceTree = "<group>"; };
+		892F1ACF2065B38F00F1E199 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		892F1AD12065B3EB00F1E199 /* APIBeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBeer.swift; sourceTree = "<group>"; };
+		892F1AD42065B4BE00F1E199 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F2536B48C1D6E8AD74691F48 /* Pods-BeerList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerList.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerList/Pods-BeerList.release.xcconfig"; sourceTree = "<group>"; };
 		F810DB4A4ADC483D13281AFE /* Pods_BeerList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -77,8 +83,6 @@
 				892F1ABC2065A20600F1E199 /* Utils */,
 				892F1ABE2065A21C00F1E199 /* Assets */,
 				892F1AC12065A24600F1E199 /* Application */,
-				892F1AA82065A0E500F1E199 /* ViewController.swift */,
-				892F1AAA2065A0E500F1E199 /* Main.storyboard */,
 			);
 			path = BeerList;
 			sourceTree = "<group>";
@@ -95,6 +99,8 @@
 		892F1AB92065A1C000F1E199 /* BeersList */ = {
 			isa = PBXGroup;
 			children = (
+				892F1AAA2065A0E500F1E199 /* Main.storyboard */,
+				892F1ACB2065B0CE00F1E199 /* BeerListViewController.swift */,
 			);
 			path = BeersList;
 			sourceTree = "<group>";
@@ -117,6 +123,8 @@
 		892F1ABC2065A20600F1E199 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				892F1AD32065B4AF00F1E199 /* Constants */,
+				892F1ACD2065B36F00F1E199 /* DataManagers */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -153,6 +161,31 @@
 				892F1AC32065A5B700F1E199 /* Info.plist */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		892F1ACD2065B36F00F1E199 /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				892F1ACE2065B37D00F1E199 /* Api */,
+			);
+			path = DataManagers;
+			sourceTree = "<group>";
+		};
+		892F1ACE2065B37D00F1E199 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				892F1ACF2065B38F00F1E199 /* APIManager.swift */,
+				892F1AD12065B3EB00F1E199 /* APIBeer.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		892F1AD32065B4AF00F1E199 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				892F1AD42065B4BE00F1E199 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		99C533BD40086384820CCEC9 /* Pods */ = {
@@ -310,9 +343,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892F1AD02065B38F00F1E199 /* APIManager.swift in Sources */,
+				892F1ACC2065B0CE00F1E199 /* BeerListViewController.swift in Sources */,
 				892F1AC42065A5B700F1E199 /* AppDelegate.swift in Sources */,
+				892F1AD22065B3EB00F1E199 /* APIBeer.swift in Sources */,
 				892F1ACA2065A9EB00F1E199 /* Beer.swift in Sources */,
-				892F1AA92065A0E500F1E199 /* ViewController.swift in Sources */,
+				892F1AD52065B4BE00F1E199 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

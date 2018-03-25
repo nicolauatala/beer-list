@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct APIManager {
+    #if PRODUCTION
+        static let baseURL = "https://api.punkapi.com/v2/"
+    #else
+        // TODO: change the url of development
+        static let baseURL = "https://api.punkapi.com/v2/"
+    #endif
+}
