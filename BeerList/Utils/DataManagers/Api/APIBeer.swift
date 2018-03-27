@@ -14,14 +14,11 @@ extension APIManager {
     enum RouterBeers: URLRequestConvertible{
         
         case getBeers(page:Int)
-        //case getRepositoryPullRequest(owner: String, repositoryName: String)
         
         var path: (method: HTTPMethod, url: String){
             switch self {
             case .getBeers:
                 return (.get, "beers")
-//            case .getRepositoryPullRequest(let owner, let repositoryName):
-//                return (.get, "/repos/\(owner)/\(repositoryName)/pulls")
             }
         }
         
@@ -33,15 +30,12 @@ extension APIManager {
             switch self {
             case .getBeers(let pageNumber):
                 return try Alamofire.URLEncoding.default.encode(urlRequest, with: ["per_page" : 10, "page": pageNumber])
-                
-//            case .getRepositoryPullRequest:
-//                return try Alamofire.JSONEncoding.default.encode(urlRequest)
             }
         }
     }
     
-    static func getRepositories(type: String, page: Int, success: @escaping ([Beer]) -> Void, failure: @escaping (NSError) -> Void) -> Request{
-        return request(urlRequestConvertible: RouterBeers.getBeers(page: page), JSONKey: "items", success: success, failure: failure)
+    static func getRepositories(page: Int, success: @escaping ([Beer]) -> Void, failure: @escaping (NSError) -> Void) -> Request{
+        return request(urlRequestConvertible: RouterBeers.getBeers(page: page), JSONKey: "", success: success, failure: failure)
     }
     
 //    static func getPullRequest(owner: String, repositoryName: String, success: @escaping ([Beer]) -> Void, failure: @escaping (NSError) -> Void) -> Request{
