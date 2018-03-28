@@ -27,7 +27,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="wOm-3M-RXF"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="9fl-fY-rLF">
+                            <searchBar alpha="0.90000000000000002" contentMode="redraw" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="9fl-fY-rLF">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="oTl-H0-taY"/>
@@ -49,6 +49,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="BeerList" id="m1i-1s-Pei"/>
+                    <connections>
+                        <outlet property="tableView" destination="j2v-bo-fUu" id="9EJ-Tp-5TJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -29,7 +29,7 @@ extension APIManager {
             
             switch self {
             case .getBeers(let pageNumber):
-                return try Alamofire.URLEncoding.default.encode(urlRequest, with: ["per_page" : 10, "page": pageNumber])
+                return try Alamofire.URLEncoding.default.encode(urlRequest, with: ["per_page" : 20, "page": pageNumber])
             }
         }
     }

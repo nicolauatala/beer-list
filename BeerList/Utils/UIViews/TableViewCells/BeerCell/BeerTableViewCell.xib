@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BeerTableViewCell" rowHeight="71" id="KGk-i7-Jjw" customClass="BeerTableViewCell" customModule="BeerList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="286" height="70.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TII-Tg-vb2">
+                        <rect key="frame" x="0.0" y="0.0" width="66" height="70.5"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="66" id="44g-kW-nZI"/>
+                            <constraint firstAttribute="height" constant="70.5" id="pep-9z-Hnc"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E15-B8-EVO">
+                        <rect key="frame" x="74" y="6" width="202" height="34.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="tag" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DkC-Gm-pPt">
+                        <rect key="frame" x="74" y="46.5" width="202" height="14.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="E15-B8-EVO" firstAttribute="leading" secondItem="TII-Tg-vb2" secondAttribute="trailing" constant="8" id="2ze-rd-bgP"/>
+                    <constraint firstAttribute="bottom" secondItem="TII-Tg-vb2" secondAttribute="bottom" id="AX2-M3-y9Q"/>
+                    <constraint firstItem="E15-B8-EVO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="Hqu-vO-1KE"/>
+                    <constraint firstAttribute="bottom" secondItem="DkC-Gm-pPt" secondAttribute="bottom" constant="9.5" id="K6c-5i-Bcs"/>
+                    <constraint firstItem="TII-Tg-vb2" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Pbu-6J-29x"/>
+                    <constraint firstAttribute="trailing" secondItem="DkC-Gm-pPt" secondAttribute="trailing" constant="10" id="eqh-D8-GzZ"/>
+                    <constraint firstItem="DkC-Gm-pPt" firstAttribute="leading" secondItem="TII-Tg-vb2" secondAttribute="trailing" constant="8" id="hIv-nA-RKa"/>
+                    <constraint firstItem="DkC-Gm-pPt" firstAttribute="top" secondItem="E15-B8-EVO" secondAttribute="bottom" constant="6" id="iER-2y-IWK"/>
+                    <constraint firstAttribute="trailing" secondItem="E15-B8-EVO" secondAttribute="trailing" constant="10" id="wmv-fN-3rx"/>
+                    <constraint firstItem="TII-Tg-vb2" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="yqV-GH-MLl"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="DkC-Gm-pPt" id="ita-Ug-UQs"/>
+                <outlet property="nameLabel" destination="E15-B8-EVO" id="tnB-7D-0B7"/>
+                <outlet property="photoImageView" destination="TII-Tg-vb2" id="y0b-3C-QfV"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="67.5"/>
+        </tableViewCell>
+    </objects>
+</document>

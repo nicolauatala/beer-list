@@ -17,6 +17,12 @@
 		892F1AD02065B38F00F1E199 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1ACF2065B38F00F1E199 /* APIManager.swift */; };
 		892F1AD22065B3EB00F1E199 /* APIBeer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1AD12065B3EB00F1E199 /* APIBeer.swift */; };
 		892F1AD52065B4BE00F1E199 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892F1AD42065B4BE00F1E199 /* Constants.swift */; };
+		89CF912C206C232800780D43 /* BeerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF912A206C232800780D43 /* BeerTableViewCell.swift */; };
+		89CF912D206C232800780D43 /* BeerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89CF912B206C232800780D43 /* BeerTableViewCell.xib */; };
+		89CF9131206C34C300780D43 /* BeerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF9130206C34C300780D43 /* BeerPresenter.swift */; };
+		89CF9134206C370700780D43 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89CF9136206C370700780D43 /* Localizable.strings */; };
+		89CF913A206C542F00780D43 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF9139206C542F00780D43 /* UITableView.swift */; };
+		89CF913C206C55E700780D43 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CF913B206C55E700780D43 /* UIAlertController.swift */; };
 		A5EF63BB0F15B1CC0222B928 /* Pods_BeerList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F810DB4A4ADC483D13281AFE /* Pods_BeerList.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +39,13 @@
 		892F1ACF2065B38F00F1E199 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		892F1AD12065B3EB00F1E199 /* APIBeer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBeer.swift; sourceTree = "<group>"; };
 		892F1AD42065B4BE00F1E199 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89CF912A206C232800780D43 /* BeerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerTableViewCell.swift; sourceTree = "<group>"; };
+		89CF912B206C232800780D43 /* BeerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeerTableViewCell.xib; sourceTree = "<group>"; };
+		89CF9130206C34C300780D43 /* BeerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerPresenter.swift; sourceTree = "<group>"; };
+		89CF9135206C370700780D43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		89CF9137206C379D00780D43 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		89CF9139206C542F00780D43 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		89CF913B206C55E700780D43 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		F2536B48C1D6E8AD74691F48 /* Pods-BeerList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BeerList.release.xcconfig"; path = "Pods/Target Support Files/Pods-BeerList/Pods-BeerList.release.xcconfig"; sourceTree = "<group>"; };
 		F810DB4A4ADC483D13281AFE /* Pods_BeerList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BeerList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -99,8 +112,8 @@
 		892F1AB92065A1C000F1E199 /* BeersList */ = {
 			isa = PBXGroup;
 			children = (
-				892F1AAA2065A0E500F1E199 /* Main.storyboard */,
-				892F1ACB2065B0CE00F1E199 /* BeerListViewController.swift */,
+				89CF912F206C349100780D43 /* Presenter */,
+				89CF912E206C348800780D43 /* View */,
 			);
 			path = BeersList;
 			sourceTree = "<group>";
@@ -123,6 +136,8 @@
 		892F1ABC2065A20600F1E199 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				89CF9138206C541E00780D43 /* Extension */,
+				89CF9127206C22C700780D43 /* UIViews */,
 				892F1AD32065B4AF00F1E199 /* Constants */,
 				892F1ACD2065B36F00F1E199 /* DataManagers */,
 			);
@@ -149,6 +164,7 @@
 		892F1AC02065A23800F1E199 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
+				89CF9136206C370700780D43 /* Localizable.strings */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -186,6 +202,57 @@
 				892F1AD42065B4BE00F1E199 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		89CF9127206C22C700780D43 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				89CF9128206C22D000780D43 /* TableViewCells */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
+		89CF9128206C22D000780D43 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				89CF9129206C22DD00780D43 /* BeerCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		89CF9129206C22DD00780D43 /* BeerCell */ = {
+			isa = PBXGroup;
+			children = (
+				89CF912A206C232800780D43 /* BeerTableViewCell.swift */,
+				89CF912B206C232800780D43 /* BeerTableViewCell.xib */,
+			);
+			path = BeerCell;
+			sourceTree = "<group>";
+		};
+		89CF912E206C348800780D43 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				892F1AAA2065A0E500F1E199 /* Main.storyboard */,
+				892F1ACB2065B0CE00F1E199 /* BeerListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		89CF912F206C349100780D43 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				89CF9130206C34C300780D43 /* BeerPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		89CF9138206C541E00780D43 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				89CF9139206C542F00780D43 /* UITableView.swift */,
+				89CF913B206C55E700780D43 /* UIAlertController.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		99C533BD40086384820CCEC9 /* Pods */ = {
@@ -243,6 +310,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 892F1A9A2065A0E500F1E199;
 			productRefGroup = 892F1AA42065A0E500F1E199 /* Products */;
@@ -260,6 +328,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				892F1AAE2065A0E500F1E199 /* Assets.xcassets in Resources */,
+				89CF9134206C370700780D43 /* Localizable.strings in Resources */,
+				89CF912D206C232800780D43 /* BeerTableViewCell.xib in Resources */,
 				892F1AC82065A5C400F1E199 /* LaunchScreen.storyboard in Resources */,
 				892F1AAC2065A0E500F1E199 /* Main.storyboard in Resources */,
 				892F1AC52065A5B700F1E199 /* Info.plist in Resources */,
@@ -344,8 +414,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				892F1AD02065B38F00F1E199 /* APIManager.swift in Sources */,
+				89CF912C206C232800780D43 /* BeerTableViewCell.swift in Sources */,
 				892F1ACC2065B0CE00F1E199 /* BeerListViewController.swift in Sources */,
 				892F1AC42065A5B700F1E199 /* AppDelegate.swift in Sources */,
+				89CF913C206C55E700780D43 /* UIAlertController.swift in Sources */,
+				89CF9131206C34C300780D43 /* BeerPresenter.swift in Sources */,
+				89CF913A206C542F00780D43 /* UITableView.swift in Sources */,
 				892F1AD22065B3EB00F1E199 /* APIBeer.swift in Sources */,
 				892F1ACA2065A9EB00F1E199 /* Beer.swift in Sources */,
 				892F1AD52065B4BE00F1E199 /* Constants.swift in Sources */,
@@ -371,6 +445,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		89CF9136206C370700780D43 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CF9135206C370700780D43 /* en */,
+				89CF9137206C379D00780D43 /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -378,6 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -435,6 +519,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

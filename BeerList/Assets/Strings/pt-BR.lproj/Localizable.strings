@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  BeerList
+
+  Created by Nicolau Atala Pelluzi on 28/03/18.
+  Copyright © 2018 Nicolau Atala Pelluzi. All rights reserved.
+*/
+
+// General
+LOAD_ERROR_MESSAGE = "Não foi possível carregar esta informação.";
+TITLE_ERROR = "Erro";
+CANCEL = "Cancelar";
+NO_INTERNET_MESSAGE = "Por favor, verifique sua conexão com a internet e tente novamente.";
+MESSAGE_WRONG = "Algo de errado aconteceu, tente novamente.";
+OK = "Ok";
+ATTENTION = "Atenção";
