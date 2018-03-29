@@ -38,6 +38,9 @@
                             <constraint firstItem="hNk-Wb-Zy9" firstAttribute="height" secondItem="bc2-Hv-SIe" secondAttribute="height" id="txG-8b-2ja"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="hNk-Wb-Zy9" id="Qns-7p-BNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3S-cX-pDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

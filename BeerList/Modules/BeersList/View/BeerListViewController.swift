@@ -21,6 +21,7 @@ class BeerListViewController: UIViewController {
     var searchActive : Bool = false
     var searchText = ""
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         beerPresenter.attachView(self)
@@ -111,12 +112,17 @@ extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "", sender: self)
+        beerPresenter.beerSelected = beerPresenter.beerList[indexPath.row]
+        performSegue(withIdentifier: "toDetailSegue", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == ""{
-           
+        if segue.identifier == "toDetailSegue"{
+            if let vc = segue.destination as? BeerDetailViewController {
+                if let beer = beerPresenter.beerSelected {
+                    vc.setBeerDetail(with: beer)
+                }
+            }
         }
     }
   

@@ -7,3 +7,24 @@
 //
 
 import Foundation
+import Alamofire
+import Localize_Swift
+
+protocol BeerDetailView: NSObjectProtocol {
+    
+}
+
+class BeerDetailPresenter {
+    
+    var beerDetail: Beer?
+    weak fileprivate var beerDetailView: BeerDetailView?
+    
+    func attachView(_ view: BeerDetailView){
+        beerDetailView = view
+    }
+    
+    func detachView() {
+        beerDetailView = nil
+    }
+    
+}

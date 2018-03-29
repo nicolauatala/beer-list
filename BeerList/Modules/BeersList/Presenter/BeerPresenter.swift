@@ -24,6 +24,7 @@ class BeerPresenter {
     var page: Int = 1
     var getBeerRequest: Request?
     var beerList = [Beer]()
+    var beerSelected: Beer?
     
     func attachView(_ view: BeerView){
         beerView = view
