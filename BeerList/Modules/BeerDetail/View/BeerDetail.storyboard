@@ -1,29 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="SVe-Ss-uOx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Beer Detail View Controller-->
         <scene sceneID="LmY-OE-4wu">
             <objects>
-                <viewController id="SVe-Ss-uOx" sceneMemberID="viewController">
+                <viewController id="SVe-Ss-uOx" customClass="BeerDetailViewController" customModule="BeerList" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RAK-FO-oZY"/>
+                        <viewControllerLayoutGuide type="bottom" id="baX-0w-4Rf"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bc2-Hv-SIe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hNk-Wb-Zy9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="SVe-Ss-uOx" id="cD2-Fx-Sv5"/>
+                                    <outlet property="delegate" destination="SVe-Ss-uOx" id="EgP-CU-FrN"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="1e2-52-8SO"/>
+                        <constraints>
+                            <constraint firstItem="hNk-Wb-Zy9" firstAttribute="width" secondItem="bc2-Hv-SIe" secondAttribute="width" id="6hL-be-j9i"/>
+                            <constraint firstItem="hNk-Wb-Zy9" firstAttribute="centerY" secondItem="bc2-Hv-SIe" secondAttribute="centerY" id="HrU-ef-8f2"/>
+                            <constraint firstItem="hNk-Wb-Zy9" firstAttribute="centerX" secondItem="bc2-Hv-SIe" secondAttribute="centerX" id="O4Y-1h-vPv"/>
+                            <constraint firstItem="hNk-Wb-Zy9" firstAttribute="height" secondItem="bc2-Hv-SIe" secondAttribute="height" id="txG-8b-2ja"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W3S-cX-pDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-162" y="150"/>
+            <point key="canvasLocation" x="-162.40000000000001" y="149.77511244377811"/>
         </scene>
     </scenes>
 </document>
