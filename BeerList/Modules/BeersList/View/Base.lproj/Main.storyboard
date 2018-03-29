@@ -19,9 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-bo-fUu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="j2v-bo-fUu">
                                 <rect key="frame" x="0.0" y="56" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="qdr-rf-JRZ"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="wOm-3M-RXF"/>
@@ -52,11 +53,20 @@
                     <connections>
                         <outlet property="searchbar" destination="9fl-fY-rLF" id="cCO-xt-4gy"/>
                         <outlet property="tableView" destination="j2v-bo-fUu" id="9EJ-Tp-5TJ"/>
+                        <segue destination="XyK-Jh-w3a" kind="show" identifier="toDetailSegue" id="3qO-cP-O7q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="372" y="33.733133433283363"/>
+        </scene>
+        <!--BeerDetail-->
+        <scene sceneID="RDV-e2-4AO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BeerDetail" id="XyK-Jh-w3a" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dhz-ML-SGh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1030" y="-290"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9pg-vz-Izu">

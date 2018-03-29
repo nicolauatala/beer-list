@@ -35,6 +35,7 @@ class BeerListViewController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 60
         tableView.register(UINib(nibName: Constants.TableViewCell.beer, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.beer)
+        tableView.register(UINib(nibName: Constants.TableViewCell.noResults, bundle: nil), forCellReuseIdentifier: Constants.TableViewCell.noResults)
         tableView.tableFooterView = UIView()
     }
     
@@ -73,14 +74,19 @@ extension BeerListViewController: BeerView {
 extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(searchActive) {
-            return self.filteredBeers.count
+            return self.filteredBeers.count > 0 ? self.filteredBeers.count : 1
         }
         return self.beerPresenter.beerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.beer, for: indexPath) as! BeerTableViewCell
+        
         if(searchActive) {
+            if filteredBeers.count == 0 {
+                return tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.noResults, for: indexPath) as! NotFoundTableViewCell
+            }
             cell.populate(with: filteredBeers[indexPath.row])
         } else {
             cell.populate(with: self.beerPresenter.beerList[indexPath.row])
@@ -95,7 +101,7 @@ extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+        tableView.setNeedsDisplay()
         let last = self.beerPresenter.beerList.count - 1
         
         if indexPath.row == last {
@@ -138,12 +144,7 @@ extension BeerListViewController: UISearchBarDelegate {
             filteredBeers = beerPresenter.beerList.filter({( beer : Beer) -> Bool in
                 return (beer.name?.lowercased().contains(searchText.lowercased()))!
             })
-
-            if(filteredBeers.count == 0){
-                searchActive = false;
-            } else {
-                searchActive = true;
-            }
+            searchActive = true;
         }
         tableView.reloadData()
     }

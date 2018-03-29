@@ -17,6 +17,7 @@ enum Constants {
     
     enum TableViewCell {
         static let beer = "BeerTableViewCell"
+        static let noResults = "NotFoundTableViewCell"
     }
     
 }
