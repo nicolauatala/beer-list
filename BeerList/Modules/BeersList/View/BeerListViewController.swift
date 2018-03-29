@@ -14,14 +14,21 @@ import PKHUD
 class BeerListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchbar: UISearchBar!
     
     fileprivate let beerPresenter = BeerPresenter()
+    var filteredBeers = [Beer]()
+    var searchActive : Bool = false
+    var searchText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         beerPresenter.attachView(self)
         prepareTableView()
         beerPresenter.getBeerList()
+        
+        self.hideKeyboardWhenTappedAround()
+        searchbar.delegate = self
     }
     
     func prepareTableView(){
@@ -65,13 +72,19 @@ extension BeerListViewController: BeerView {
 
 extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if(searchActive) {
+            return self.filteredBeers.count
+        }
         return self.beerPresenter.beerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.beer, for: indexPath) as! BeerTableViewCell
-        
-        cell.populate(with: self.beerPresenter.beerList[indexPath.row])
+        if(searchActive) {
+            cell.populate(with: filteredBeers[indexPath.row])
+        } else {
+            cell.populate(with: self.beerPresenter.beerList[indexPath.row])
+        }
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         return cell
@@ -101,4 +114,37 @@ extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
   
+}
+
+extension BeerListViewController: UISearchBarDelegate {
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        print(#function)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print(#function)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        searchActive = false;
+
+        if !searchText.isEmpty {
+            filteredBeers = beerPresenter.beerList.filter({( beer : Beer) -> Bool in
+                return (beer.name?.lowercased().contains(searchText.lowercased()))!
+            })
+
+            if(filteredBeers.count == 0){
+                searchActive = false;
+            } else {
+                searchActive = true;
+            }
+        }
+        tableView.reloadData()
+    }
 }

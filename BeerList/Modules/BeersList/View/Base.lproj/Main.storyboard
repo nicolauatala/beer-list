@@ -50,6 +50,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="BeerList" id="m1i-1s-Pei"/>
                     <connections>
+                        <outlet property="searchbar" destination="9fl-fY-rLF" id="cCO-xt-4gy"/>
                         <outlet property="tableView" destination="j2v-bo-fUu" id="9EJ-Tp-5TJ"/>
                     </connections>
                 </viewController>
