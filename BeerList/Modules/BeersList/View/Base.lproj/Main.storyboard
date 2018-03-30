@@ -49,8 +49,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="BeerList" id="m1i-1s-Pei"/>
+                    <navigationItem key="navigationItem" title="BeerList" id="m1i-1s-Pei">
+                        <barButtonItem key="rightBarButtonItem" title="Favorites" id="Uq8-oy-JPx">
+                            <connections>
+                                <action selector="favoritesAction:" destination="BYZ-38-t0r" id="6Ku-xV-VOW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="favoritesButton" destination="Uq8-oy-JPx" id="nr2-RS-gJL"/>
                         <outlet property="searchbar" destination="9fl-fY-rLF" id="cCO-xt-4gy"/>
                         <outlet property="tableView" destination="j2v-bo-fUu" id="9EJ-Tp-5TJ"/>
                         <segue destination="XyK-Jh-w3a" kind="show" identifier="toDetailSegue" id="3qO-cP-O7q"/>

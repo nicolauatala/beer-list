@@ -14,3 +14,5 @@ NO_INTERNET_MESSAGE = "Please check your internet connection and try again.";
 MESSAGE_WRONG = "Something went wrong, please try again.";
 OK = "Ok";
 ATTENTION = "Attention";
+FAVORITES = "Favorites";
+ALL = "All";

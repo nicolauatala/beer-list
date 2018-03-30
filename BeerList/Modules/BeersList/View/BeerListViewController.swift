@@ -15,11 +15,13 @@ class BeerListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchbar: UISearchBar!
+    @IBOutlet weak var favoritesButton: UIBarButtonItem!
     
     fileprivate let beerPresenter = BeerPresenter()
-    var filteredBeers = [Beer]()
-    var searchActive : Bool = false
-    var searchText = ""
+    var filteredBeers   = [Beer]()
+    var searchActive    : Bool = false
+    var favoritesActive : Bool = false
+    var searchText      = ""
     
     
     override func viewDidLoad() {
@@ -27,9 +29,15 @@ class BeerListViewController: UIViewController {
         beerPresenter.attachView(self)
         prepareTableView()
         beerPresenter.getBeerList()
-        
+        favoritesButton.title = "FAVORITES".localized()
         self.hideKeyboardWhenTappedAround()
         searchbar.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if favoritesActive {
+            self.beerPresenter.getFavoritesList()
+        }
     }
     
     func prepareTableView(){
@@ -43,7 +51,18 @@ class BeerListViewController: UIViewController {
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         tableView.setNeedsDisplay()
     }
-
+    
+    @IBAction func favoritesAction(_ sender: Any) {
+        favoritesActive = !favoritesActive
+        if self.favoritesActive {
+            self.favoritesButton.title = "ALL".localized()
+            self.beerPresenter.getFavoritesList()
+        } else {
+            self.favoritesButton.title = "FAVORITES".localized()
+            self.tableView.reloadData()
+        }
+    }
+    
 }
 
 //MARK: Protocol BeerView
@@ -70,25 +89,36 @@ extension BeerListViewController: BeerView {
         UIAlertController.presentAlertInViewController(self, title: title, message: message, actions: [action], completion: nil)
     }
     
+    func showFavoritesList() {
+        tableView.reloadData()
+    }
+    
 }
 
 extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if(searchActive) {
+        if searchActive {
             return self.filteredBeers.count > 0 ? self.filteredBeers.count : 1
+        }
+        if favoritesActive {
+            return self.beerPresenter.favoritesList.count > 0 ? self.beerPresenter.favoritesList.count : 1
         }
         return self.beerPresenter.beerList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.beer, for: indexPath) as! BeerTableViewCell
         
-        if(searchActive) {
+        if searchActive {
             if filteredBeers.count == 0 {
                 return tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.noResults, for: indexPath) as! NotFoundTableViewCell
             }
             cell.populate(with: filteredBeers[indexPath.row])
+        } else if favoritesActive {
+            if self.beerPresenter.favoritesList.count == 0 {
+                return tableView.dequeueReusableCell(withIdentifier: Constants.TableViewCell.noResults, for: indexPath) as! NotFoundTableViewCell
+            }
+            cell.populate(with: self.beerPresenter.favoritesList[indexPath.row])
         } else {
             cell.populate(with: self.beerPresenter.beerList[indexPath.row])
         }
@@ -103,16 +133,24 @@ extension BeerListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         tableView.setNeedsDisplay()
-        let last = self.beerPresenter.beerList.count - 1
-        
-        if indexPath.row == last {
-            self.beerPresenter.page += 1
-            self.beerPresenter.getBeerList()
+        if !favoritesActive {
+            let last = self.beerPresenter.beerList.count - 1
+            
+            if indexPath.row == last {
+                self.beerPresenter.page += 1
+                self.beerPresenter.getBeerList()
+            }
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        beerPresenter.beerSelected = beerPresenter.beerList[indexPath.row]
+        if searchActive {
+            beerPresenter.beerSelected = filteredBeers[indexPath.row]
+        } else if favoritesActive {
+            beerPresenter.beerSelected = beerPresenter.favoritesList[indexPath.row]
+        } else {
+            beerPresenter.beerSelected = beerPresenter.beerList[indexPath.row]
+        }
         performSegue(withIdentifier: "toDetailSegue", sender: self)
     }
     
@@ -147,8 +185,10 @@ extension BeerListViewController: UISearchBarDelegate {
         searchActive = false;
 
         if !searchText.isEmpty {
-            filteredBeers = beerPresenter.beerList.filter({( beer : Beer) -> Bool in
-                return (beer.name?.lowercased().contains(searchText.lowercased()))!
+            var setList = [Beer]()
+            setList = favoritesActive == true ? beerPresenter.favoritesList : beerPresenter.beerList
+            filteredBeers = setList.filter({( beer : Beer) -> Bool in
+                return beer.name.lowercased().contains(searchText.lowercased())
             })
             searchActive = true;
         }

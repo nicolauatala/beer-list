@@ -9,11 +9,14 @@
 import Foundation
 import Alamofire
 import Localize_Swift
+import RealmSwift
+import Realm
 
 protocol BeerView: NSObjectProtocol {
     func startLoading()
     func finishLoading()
     func showBeerList()
+    func showFavoritesList()
     func showMessage(_ title: String, _ message: String)
 }
 
@@ -24,6 +27,7 @@ class BeerPresenter {
     var page: Int = 1
     var getBeerRequest: Request?
     var beerList = [Beer]()
+    var favoritesList:[Beer] = [Beer]()
     var beerSelected: Beer?
     
     func attachView(_ view: BeerView){
@@ -48,6 +52,17 @@ class BeerPresenter {
             self.beerView?.finishLoading()
             self.beerView?.showMessage("TITLE_ERROR".localized(), "MESSAGE_WRONG".localized())
         })
+    }
+    
+    func getFavoritesList(){
+        let recordedBeer = {
+            try! Realm().objects(Beer.self).filter("isFavorite == %@", "YES")
+        }()
+        favoritesList.removeAll()
+        for beer in recordedBeer {
+           favoritesList.append(beer)
+        }
+        beerView?.showFavoritesList()
     }
     
     deinit {

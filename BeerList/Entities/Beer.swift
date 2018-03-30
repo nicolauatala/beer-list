@@ -8,32 +8,60 @@
 
 import Foundation
 import ObjectMapper
+import RealmSwift
 
-class Beer: Mappable {
-
-    var name: String?
-    var tagline: String?
-    var description: String?
-    var image_url: String?
+final class Beer: Object, Mappable {
+    
+    @objc dynamic var id: Int = 0
+    @objc dynamic var name: String = ""
+    @objc dynamic var tagline: String = ""
+    @objc dynamic var descriptionBeer: String = ""
+    @objc dynamic var image_url: String = ""
+    @objc dynamic var isFavorite: String = "NO"
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
     
     var photoURLDescription: URL?{
-        if let image_url = image_url{
+        if image_url != "" {
             return URL(string: image_url)
         }
         return nil
     }
   
-    init() {}
-
-    required init?(map: Map) {
-    mapping(map: map)
+    required convenience init?(map: Map) {
+        self.init()
+        mapping(map: map)
     }
 
     func mapping(map: Map) {
-    name        <- map["name"]
-    tagline     <- map["tagline"]
-    description <- map["description"]
-    image_url   <- map["image_url"]
-}
+        id              <- map["id"]
+        name            <- map["name"]
+        tagline         <- map["tagline"]
+        descriptionBeer <- map["description"]
+        image_url       <- map["image_url"]
+    }
+    
+    func save() {
+        DBManager.addObjc(self)
+    }
+    
+    func delete(){
+        DBManager.deleteObjc(self)
+    }
+    
+    func isFavorite(bool: Bool){
+        do {
+            RealmSingleton.shared.realm.beginWrite()
+            if bool{
+                self.isFavorite = "YES"
+            }  else {
+                self.isFavorite = "NO"
+            }
+        }
+        try! RealmSingleton.shared.realm.commitWrite()
+        DBManager.update(self)
+    }
   
 }

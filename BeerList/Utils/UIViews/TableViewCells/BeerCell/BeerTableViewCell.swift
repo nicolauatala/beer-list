@@ -27,14 +27,8 @@ class BeerTableViewCell: UITableViewCell {
     }
     
     func populate(with data: Beer){
-        
-        if let name = data.name{
-            nameLabel.text = name
-        }
-        
-        if let tagline = data.tagline{
-            descriptionLabel.text = tagline
-        }
+        nameLabel.text = data.name
+        descriptionLabel.text = data.tagline
         
         if let photoURLDescription = data.photoURLDescription {
             photoImageView.kf.setImage(with: photoURLDescription)
