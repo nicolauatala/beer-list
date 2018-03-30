@@ -22,6 +22,9 @@ class BeerDetailTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        nameLabel.setDynamicFont()
+        tagLabel.setDynamicFont()
+        descriptionLabel.setDynamicFont()
         photoImageView.layer.masksToBounds = true
     }
     

@@ -10,8 +10,10 @@ import UIKit
 
 class NotFoundTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var noResult: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        noResult.setDynamicFont()
     }
 }

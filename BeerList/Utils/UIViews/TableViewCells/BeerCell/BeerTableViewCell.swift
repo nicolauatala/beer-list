@@ -15,15 +15,19 @@ class BeerTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        nameLabel.setDynamicFont()
+        descriptionLabel.setDynamicFont()
         photoImageView.layer.masksToBounds = true
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         photoImageView.layoutIfNeeded()
+        imageHeightConstraint.constant = UIScreen.main.bounds.height / 8
     }
     
     func populate(with data: Beer){
