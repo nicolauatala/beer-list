@@ -8,7 +8,7 @@ inhibit_all_warnings!
 target 'BeerList' do
   # Pods for BeerList
   pod 'Alamofire', '~> 4.4'
-  pod 'RealmSwift', '~> 2.10.0'
+  pod 'RealmSwift'
   pod 'PKHUD', '~> 5.0'
   pod 'AlamofireObjectMapper', '~> 5.0'
   pod 'Localize-Swift', '~> 2.0'

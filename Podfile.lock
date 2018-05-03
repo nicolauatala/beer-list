@@ -1,18 +1,18 @@
 PODS:
-  - Alamofire (4.6.0)
+  - Alamofire (4.7.2)
   - AlamofireObjectMapper (5.0.0):
     - Alamofire (~> 4.1)
     - ObjectMapper (~> 3.0)
-  - Kingfisher (4.6.1)
+  - Kingfisher (4.7.0)
   - Localize-Swift (2.0.0)
   - ObjectMapper (3.1.0)
   - PKHUD (5.0.0)
   - ReachabilitySwift (4.1.0)
-  - Realm (2.10.2):
-    - Realm/Headers (= 2.10.2)
-  - Realm/Headers (2.10.2)
-  - RealmSwift (2.10.2):
-    - Realm (= 2.10.2)
+  - Realm (3.5.0):
+    - Realm/Headers (= 3.5.0)
+  - Realm/Headers (3.5.0)
+  - RealmSwift (3.5.0):
+    - Realm (= 3.5.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.4)
@@ -21,7 +21,7 @@ DEPENDENCIES:
   - Localize-Swift (~> 2.0)
   - PKHUD (~> 5.0)
   - ReachabilitySwift
-  - RealmSwift (~> 2.10.0)
+  - RealmSwift
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -36,16 +36,16 @@ SPEC REPOS:
     - RealmSwift
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
-  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
+  Kingfisher: da6b005aa96d37698e3e4f1ccfe96a5b9bbf27d6
   Localize-Swift: c798ec9286494866f7068f85f7c71283ac5bdab4
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   ReachabilitySwift: 6849231cd4e06559f3b9ef4a97a0a0f96d41e09f
-  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
-  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
+  RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
 
-PODFILE CHECKSUM: 93400b827ec054b6ed79c2b3ffb98f6a1611c171
+PODFILE CHECKSUM: eb1a3c1f6cc6eed149caa6726d3cff500c70adc8
 
 COCOAPODS: 1.5.0
