@@ -355,7 +355,6 @@
 				892F1AA02065A0E500F1E199 /* Frameworks */,
 				892F1AA12065A0E500F1E199 /* Resources */,
 				EE307FA0DE128B64365D5873 /* [CP] Embed Pods Frameworks */,
-				2C20D27066264EE9872EF817 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -421,21 +420,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C20D27066264EE9872EF817 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BeerList/Pods-BeerList-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8740B3505C5A792A106A51A2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

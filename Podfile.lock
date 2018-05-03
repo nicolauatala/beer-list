@@ -23,6 +23,18 @@ DEPENDENCIES:
   - ReachabilitySwift
   - RealmSwift (~> 2.10.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireObjectMapper
+    - Kingfisher
+    - Localize-Swift
+    - ObjectMapper
+    - PKHUD
+    - ReachabilitySwift
+    - Realm
+    - RealmSwift
+
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
@@ -36,4 +48,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 93400b827ec054b6ed79c2b3ffb98f6a1611c171
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.0
